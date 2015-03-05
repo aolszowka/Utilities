@@ -1,6 +1,6 @@
 ﻿// -----------------------------------------------------------------------
 // <copyright file="OptionsDialog.cs" company="Ace Olszowka">
-// Copyright (c) Ace Olszowka 2014. All rights reserved.
+// Copyright (c) Ace Olszowka 2014-2015. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -59,6 +59,19 @@ namespace ColumnSelector
         {
             this.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.Close();
+        }
+
+        /// <summary>
+        /// EventHandler for the Activated Event.
+        /// </summary>
+        /// <param name="sender">The object that raised this event.</param>
+        /// <param name="e">The arguments to this event.</param>
+        /// <remarks>
+        /// Currently this just moves focus to the "Column to Select" dialog.
+        /// </remarks>
+        private void OptionsDialog_Activated(object sender, EventArgs e)
+        {
+            this.textBoxColumnToSelect.Focus();
         }
     }
 }

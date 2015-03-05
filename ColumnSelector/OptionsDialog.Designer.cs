@@ -82,7 +82,7 @@
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(75, 23);
             this.buttonCancel.TabIndex = 0;
-            this.buttonCancel.Text = "Cancel";
+            this.buttonCancel.Text = "&Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
@@ -92,7 +92,7 @@
             this.buttonOk.Name = "buttonOk";
             this.buttonOk.Size = new System.Drawing.Size(75, 23);
             this.buttonOk.TabIndex = 1;
-            this.buttonOk.Text = "Ok";
+            this.buttonOk.Text = "&Ok";
             this.buttonOk.UseVisualStyleBackColor = true;
             this.buttonOk.Click += new System.EventHandler(this.buttonOk_Click);
             // 
@@ -120,12 +120,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.CancelButton = this.buttonCancel;
             this.ClientSize = new System.Drawing.Size(284, 98);
             this.Controls.Add(this.tableLayoutPanelMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "OptionsDialog";
             this.ShowInTaskbar = false;
             this.Text = "Options";
+            this.Activated += new System.EventHandler(this.OptionsDialog_Activated);
             this.tableLayoutPanelMain.ResumeLayout(false);
             this.tableLayoutPanelMain.PerformLayout();
             this.tableLayoutButtons.ResumeLayout(false);

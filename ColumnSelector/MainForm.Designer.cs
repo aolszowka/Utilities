@@ -38,6 +38,7 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sortOutputToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.filterOutputDistinctToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.columnOptionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inputDialogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inputWordWrapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,7 +46,6 @@
             this.outputWordWrapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.filterOutputDistinctToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.mainSplitContainer)).BeginInit();
             this.mainSplitContainer.Panel1.SuspendLayout();
             this.mainSplitContainer.Panel2.SuspendLayout();
@@ -125,13 +125,14 @@
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem.Text = "File";
+            this.fileToolStripMenuItem.Text = "&File";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
-            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Text = "E&xit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // optionsToolStripMenuItem
@@ -144,21 +145,30 @@
             this.outputDialogToolStripMenuItem});
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
             this.optionsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.optionsToolStripMenuItem.Text = "Options";
+            this.optionsToolStripMenuItem.Text = "&Options";
             // 
             // sortOutputToolStripMenuItem
             // 
             this.sortOutputToolStripMenuItem.CheckOnClick = true;
             this.sortOutputToolStripMenuItem.Name = "sortOutputToolStripMenuItem";
-            this.sortOutputToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
-            this.sortOutputToolStripMenuItem.Text = "Sort Output";
+            this.sortOutputToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
+            this.sortOutputToolStripMenuItem.Text = "&Sort Output";
             this.sortOutputToolStripMenuItem.CheckedChanged += new System.EventHandler(this.sortOutputToolStripMenuItem_CheckedChanged);
+            // 
+            // filterOutputDistinctToolStripMenuItem
+            // 
+            this.filterOutputDistinctToolStripMenuItem.CheckOnClick = true;
+            this.filterOutputDistinctToolStripMenuItem.Name = "filterOutputDistinctToolStripMenuItem";
+            this.filterOutputDistinctToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
+            this.filterOutputDistinctToolStripMenuItem.Text = "Filter Output &Distinct";
+            this.filterOutputDistinctToolStripMenuItem.CheckedChanged += new System.EventHandler(this.filterOutputDistinctToolStripMenuItem_CheckedChanged);
             // 
             // columnOptionsToolStripMenuItem
             // 
             this.columnOptionsToolStripMenuItem.Name = "columnOptionsToolStripMenuItem";
-            this.columnOptionsToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
-            this.columnOptionsToolStripMenuItem.Text = "Column Options";
+            this.columnOptionsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Tab)));
+            this.columnOptionsToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
+            this.columnOptionsToolStripMenuItem.Text = "&Column Options";
             this.columnOptionsToolStripMenuItem.Click += new System.EventHandler(this.columnOptionsToolStripMenuItem_Click);
             // 
             // inputDialogToolStripMenuItem
@@ -166,15 +176,15 @@
             this.inputDialogToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.inputWordWrapToolStripMenuItem});
             this.inputDialogToolStripMenuItem.Name = "inputDialogToolStripMenuItem";
-            this.inputDialogToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
-            this.inputDialogToolStripMenuItem.Text = "Input Dialog";
+            this.inputDialogToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
+            this.inputDialogToolStripMenuItem.Text = "&Input Dialog";
             // 
             // inputWordWrapToolStripMenuItem
             // 
             this.inputWordWrapToolStripMenuItem.CheckOnClick = true;
             this.inputWordWrapToolStripMenuItem.Name = "inputWordWrapToolStripMenuItem";
-            this.inputWordWrapToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
-            this.inputWordWrapToolStripMenuItem.Text = "Word Wrap";
+            this.inputWordWrapToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.inputWordWrapToolStripMenuItem.Text = "Word &Wrap";
             this.inputWordWrapToolStripMenuItem.CheckedChanged += new System.EventHandler(this.inputWordWrapToolStripMenuItem_CheckedChanged);
             // 
             // outputDialogToolStripMenuItem
@@ -182,15 +192,15 @@
             this.outputDialogToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.outputWordWrapToolStripMenuItem});
             this.outputDialogToolStripMenuItem.Name = "outputDialogToolStripMenuItem";
-            this.outputDialogToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
-            this.outputDialogToolStripMenuItem.Text = "Output Dialog";
+            this.outputDialogToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
+            this.outputDialogToolStripMenuItem.Text = "&Output Dialog";
             // 
             // outputWordWrapToolStripMenuItem
             // 
             this.outputWordWrapToolStripMenuItem.CheckOnClick = true;
             this.outputWordWrapToolStripMenuItem.Name = "outputWordWrapToolStripMenuItem";
-            this.outputWordWrapToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
-            this.outputWordWrapToolStripMenuItem.Text = "Word Wrap";
+            this.outputWordWrapToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.outputWordWrapToolStripMenuItem.Text = "Word &Wrap";
             this.outputWordWrapToolStripMenuItem.CheckedChanged += new System.EventHandler(this.outputWordWrapToolStripMenuItem_CheckedChanged);
             // 
             // helpToolStripMenuItem
@@ -199,22 +209,14 @@
             this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
-            this.helpToolStripMenuItem.Text = "Help";
+            this.helpToolStripMenuItem.Text = "&Help";
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
-            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem.Text = "&About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
-            // 
-            // filterOutputDistinctToolStripMenuItem
-            // 
-            this.filterOutputDistinctToolStripMenuItem.CheckOnClick = true;
-            this.filterOutputDistinctToolStripMenuItem.Name = "filterOutputDistinctToolStripMenuItem";
-            this.filterOutputDistinctToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
-            this.filterOutputDistinctToolStripMenuItem.Text = "Filter Output Distinct";
-            this.filterOutputDistinctToolStripMenuItem.CheckedChanged += new System.EventHandler(this.filterOutputDistinctToolStripMenuItem_CheckedChanged);
             // 
             // MainForm
             // 
