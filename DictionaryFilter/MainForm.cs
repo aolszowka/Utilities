@@ -1,38 +1,44 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
+﻿// -----------------------------------------------------------------------
+// <copyright file="MainForm.cs" company="Ace Olszowka">
+// Copyright (c) Ace Olszowka 2014. All rights reserved.
+// </copyright>
+// -----------------------------------------------------------------------
 
 namespace DictionaryFilter
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Windows.Forms;
+
+    /// <summary>
+    /// A Toy Program that simulates dynamic Dictionary creation and lookup.
+    /// </summary>
     public partial class MainForm : Form
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MainForm"/> class.
+        /// </summary>
         public MainForm()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
 
         /// <summary>
-        /// EventHander for when the Input TextBoxes Change.
+        /// Performs a "Dictionary Filter" on the given inputs.
         /// </summary>
-        /// <param name="sender">The object that invoked this event.</param>
-        /// <param name="e">The arguments to this event.</param>
-        private void OnInputsChanged(object sender, EventArgs e)
-        {
-            textBoxOutput.Text = "Processing...";
-
-            string output = _PerformDictionaryFilter(textBoxInput.Text, textBoxFilter.Text);
-
-            // Set our text
-            textBoxOutput.Text = output;
-        }
-
+        /// <param name="inputDictionaryString">The "Input String" that contains the dictionary to filter.</param>
+        /// <param name="filterString">The "Input String" that contains the keys to filter on.</param>
+        /// <returns>An "Output String" that is delimited by newline characters.</returns>
+        /// <remarks>
+        ///     The "Input String" and "Output String" are just a plain old
+        /// string that stores several inputs, delimited by a newline.
+        /// </remarks>
         private static string _PerformDictionaryFilter(string inputDictionaryString, string filterString)
         {
+            // TODO: This needs to be abstracted out to a library method that can be unit tested.
+
             char delimiter = '\t';
 
             IDictionary<string, string> inputDictionary = _ParseInputDictionaryString(inputDictionaryString, delimiter);
@@ -148,6 +154,34 @@ namespace DictionaryFilter
             var distinctFilters = allFilters.Distinct();
 
             return distinctFilters;
+        }
+
+        /// <summary>
+        /// EventHandler for when the Exit Item is invoked.
+        /// </summary>
+        /// <param name="sender">The object that invoked the ProcessHotkeys EventHandler.</param>
+        /// <param name="e">The EventArgs from that control.</param>
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        /// <summary>
+        /// EventHander for when the Input TextBoxes Change.
+        /// </summary>
+        /// <param name="sender">The object that invoked this event.</param>
+        /// <param name="e">The arguments to this event.</param>
+        private void OnInputsChanged(object sender, EventArgs e)
+        {
+            this.textBoxOutput.Text = "Processing...";
+
+            string output =
+                _PerformDictionaryFilter(
+                this.textBoxInput.Text,
+                this.textBoxFilter.Text);
+
+            // Set our text
+            this.textBoxOutput.Text = output;
         }
     }
 }
