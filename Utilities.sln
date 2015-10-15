@@ -1,11 +1,13 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ColumnSelector", "ColumnSelector\ColumnSelector.csproj", "{87773F03-1E60-442D-93EC-80E9BB64839E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DictionaryFilter", "DictionaryFilter\DictionaryFilter.csproj", "{B565CD64-5C2E-47BA-9242-33BD23460F1F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sorter", "Sorter\Sorter.csproj", "{6A3218C6-AA79-4BC4-AB5D-012C5AB28D5E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScanForBadAssemblyVersion", "ScanForBadAssemblyVersion\ScanForBadAssemblyVersion.csproj", "{8B2F05FA-A9A4-463D-B81B-906FE0EEBA70}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,6 +27,10 @@ Global
 		{6A3218C6-AA79-4BC4-AB5D-012C5AB28D5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A3218C6-AA79-4BC4-AB5D-012C5AB28D5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A3218C6-AA79-4BC4-AB5D-012C5AB28D5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B2F05FA-A9A4-463D-B81B-906FE0EEBA70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B2F05FA-A9A4-463D-B81B-906FE0EEBA70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B2F05FA-A9A4-463D-B81B-906FE0EEBA70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B2F05FA-A9A4-463D-B81B-906FE0EEBA70}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
