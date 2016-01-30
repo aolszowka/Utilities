@@ -35,8 +35,8 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.descendingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.textBoxInput = new System.Windows.Forms.TextBox();
-            this.textBoxOutput = new System.Windows.Forms.TextBox();
+            this.textBoxInput = new System.Windows.Forms.RichTextBox();
+            this.textBoxOutput = new System.Windows.Forms.RichTextBox();
             this.distinctToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripMainForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerMainForm)).BeginInit();
@@ -121,7 +121,6 @@
             this.textBoxInput.Location = new System.Drawing.Point(0, 0);
             this.textBoxInput.Multiline = true;
             this.textBoxInput.Name = "textBoxInput";
-            this.textBoxInput.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBoxInput.Size = new System.Drawing.Size(602, 223);
             this.textBoxInput.TabIndex = 0;
             this.textBoxInput.Text = "Input";
@@ -135,7 +134,6 @@
             this.textBoxOutput.Location = new System.Drawing.Point(0, 0);
             this.textBoxOutput.Multiline = true;
             this.textBoxOutput.Name = "textBoxOutput";
-            this.textBoxOutput.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBoxOutput.Size = new System.Drawing.Size(602, 219);
             this.textBoxOutput.TabIndex = 0;
             this.textBoxOutput.Text = "Output";
@@ -183,8 +181,8 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem descendingToolStripMenuItem;
-        private System.Windows.Forms.TextBox textBoxInput;
-        private System.Windows.Forms.TextBox textBoxOutput;
+        private System.Windows.Forms.RichTextBox textBoxInput;
+        private System.Windows.Forms.RichTextBox textBoxOutput;
         private System.Windows.Forms.ToolStripMenuItem distinctToolStripMenuItem;
     }
 }

@@ -99,7 +99,7 @@ namespace Sorter
         private static IEnumerable<string> _ParseInputString(string inputString)
         {
             return
-                inputString.Split(new string[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
+                inputString.Split(new string[] { Environment.NewLine, "\n" }, StringSplitOptions.RemoveEmptyEntries);
         }
 
         /// <summary>
@@ -142,7 +142,7 @@ namespace Sorter
             if (e.Control && e.KeyCode == Keys.A)
             {
                 // Check to see if we were in a textbox control
-                TextBox textBoxControl = sender as TextBox;
+                RichTextBox textBoxControl = sender as RichTextBox;
                 if (textBoxControl != null)
                 {
                     textBoxControl.SelectAll();
