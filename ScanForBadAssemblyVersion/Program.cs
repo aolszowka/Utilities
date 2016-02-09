@@ -1,6 +1,6 @@
 ﻿// -----------------------------------------------------------------------
-// <copyright file="AssemblyLoaderRemote.cs" company="Ace Olszowka">
-// Copyright (c) Ace Olszowka 2015. All rights reserved.
+// <copyright file="Program.cs" company="Ace Olszowka">
+// Copyright (c) Ace Olszowka 2015-2016. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -13,7 +13,8 @@ namespace ScanForBadAssemblyVersion
     using System.Reflection;
 
     /// <summary>
-    /// Toy program to scan the given directories for CLR assemblies and 
+    /// Toy program to scan the given directories for CLR assemblies and looks
+    /// for those with "Bad Versions" (IE 0.0.0.0).
     /// </summary>
     public class Program
     {
