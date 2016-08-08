@@ -1,6 +1,6 @@
 ﻿// -----------------------------------------------------------------------
 // <copyright file="ColumnUtility.cs" company="Ace Olszowka">
-// Copyright (c) Ace Olszowka 2014. All rights reserved.
+// Copyright (c) Ace Olszowka 2014-2016. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -20,7 +20,7 @@ namespace ColumnSelector
         /// the Rows to operate on. Returns the specified "column", which is
         /// based on the given delimiter.
         /// </summary>
-        /// <param name="inputString">The input rows that are delimited on <see cref="System.Environment.NewLine"/>.</param>
+        /// <param name="inputString">The input rows that are delimited on <see cref="System.Environment.NewLine"/> or LF character.</param>
         /// <param name="columnDelimiter">The column delimiter.</param>
         /// <param name="columnIndex">The zero-based column index to return.</param>
         /// <returns>An <see cref="T:System.Collections.Generic.IEnumerable{T}"/> of <see cref="T:System.String"/> of the specified column for each of the input rows.</returns>
@@ -32,7 +32,7 @@ namespace ColumnSelector
             }
 
             string[] inputRows =
-                inputString.Split(new string[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
+                inputString.Split(new string[] { Environment.NewLine, "\n" }, StringSplitOptions.RemoveEmptyEntries);
 
             return GetColumnFromStrings(inputRows, columnDelimiter, columnIndex);
         }

@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.mainSplitContainer = new System.Windows.Forms.SplitContainer();
-            this.textBoxInput = new System.Windows.Forms.TextBox();
-            this.textBoxOutput = new System.Windows.Forms.TextBox();
+            this.textBoxInput = new System.Windows.Forms.RichTextBox();
+            this.textBoxOutput = new System.Windows.Forms.RichTextBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -78,7 +78,7 @@
             this.textBoxInput.Location = new System.Drawing.Point(0, 0);
             this.textBoxInput.Multiline = true;
             this.textBoxInput.Name = "textBoxInput";
-            this.textBoxInput.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.textBoxInput.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Both;
             this.textBoxInput.Size = new System.Drawing.Size(385, 429);
             this.textBoxInput.TabIndex = 0;
             this.textBoxInput.Text = "Input";
@@ -92,7 +92,7 @@
             this.textBoxOutput.Location = new System.Drawing.Point(0, 0);
             this.textBoxOutput.Multiline = true;
             this.textBoxOutput.Name = "textBoxOutput";
-            this.textBoxOutput.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.textBoxOutput.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Both;
             this.textBoxOutput.Size = new System.Drawing.Size(382, 429);
             this.textBoxOutput.TabIndex = 0;
             this.textBoxOutput.Text = "Output";
@@ -245,8 +245,8 @@
         #endregion
 
         private System.Windows.Forms.SplitContainer mainSplitContainer;
-        private System.Windows.Forms.TextBox textBoxInput;
-        private System.Windows.Forms.TextBox textBoxOutput;
+        private System.Windows.Forms.RichTextBox textBoxInput;
+        private System.Windows.Forms.RichTextBox textBoxOutput;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
