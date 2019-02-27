@@ -6,7 +6,9 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Sorter")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription(@"This toy utility allows you to input large amounts of text and then sort them alphabetically.
+
+It also allows you to filter them in a Case Sensitive or Insensitive manner.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Ace Olszowka")]
 [assembly: AssemblyProduct("Sorter")]
@@ -32,5 +34,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("0.0.0.4")]
-[assembly: AssemblyFileVersion("0.0.0.4")]
+[assembly: AssemblyVersion("0.0.0.5")]
+[assembly: AssemblyFileVersion("0.0.0.5")]

@@ -146,5 +146,18 @@ namespace Sorter
             distinctOptionsState = DistinctOptions.CaseInsensitive;
             UpdateDistinctOptionsState();
         }
+
+        /// <summary>
+        /// EventHandler called when the About tool strip menu item is clicked.
+        /// </summary>
+        /// <param name="sender">The object that raised this event.</param>
+        /// <param name="e">The arguments to this event.</param>
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (AboutBox aboutBox = new AboutBox())
+            {
+                aboutBox.ShowDialog(this);
+            }
+        }
     }
 }
