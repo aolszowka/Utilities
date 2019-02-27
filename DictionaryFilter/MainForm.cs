@@ -87,7 +87,7 @@ namespace DictionaryFilter
             IDictionary<string, string> returnDictionary = new Dictionary<string, string>();
 
             // Split the input string on the new line character first
-            var dictionaryEntryStrings =
+            string[] dictionaryEntryStrings =
                 inputDictionaryString.Split(new string[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
 
             // Now create the dictionary, currently the "Key" is assumed
@@ -147,11 +147,11 @@ namespace DictionaryFilter
         private static IEnumerable<string> _ParseFilter(string filterInputString)
         {
             // Split the input string on the new line character first
-            var allFilters =
+            string[] allFilters =
                 filterInputString.Split(new string[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
 
             // We just want the distinct filters
-            var distinctFilters = allFilters.Distinct();
+            IEnumerable<string> distinctFilters = allFilters.Distinct();
 
             return distinctFilters;
         }

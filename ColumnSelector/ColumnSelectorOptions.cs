@@ -88,10 +88,10 @@ namespace ColumnSelector
         public ColumnSelectorOptions Clone()
         {
             return new ColumnSelectorOptions()
-                       {
-                           ColumnToSelect = this.ColumnToSelect,
-                           ColumnDelimiter = this.ColumnDelimiter
-                       };
+            {
+                ColumnToSelect = this.ColumnToSelect,
+                ColumnDelimiter = this.ColumnDelimiter
+            };
         }
     }
 }

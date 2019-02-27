@@ -39,7 +39,7 @@ namespace ColumnSelector
                 };
 
             // Set our default font (Consolas)
-            var currentFont =
+            Font currentFont =
                 new Font("Consolas", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, (byte)0);
             this._SetTextBoxFont(currentFont);
         }
