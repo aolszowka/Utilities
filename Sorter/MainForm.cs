@@ -16,11 +16,17 @@ namespace Sorter
     public partial class MainForm : Form
     {
         /// <summary>
+        /// Stores the Distinct Filter State
+        /// </summary>
+        DistinctOptions distinctOptionsState = DistinctOptions.None;
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="MainForm"/> class.
         /// </summary>
         public MainForm()
         {
             this.InitializeComponent();
+            UpdateDistinctOptionsState();
         }
 
         /// <summary>
@@ -46,7 +52,7 @@ namespace Sorter
                 SorterLogic.SortInput(
                 this.textBoxInput.Text,
                 this.descendingToolStripMenuItem.Checked,
-                this.distinctToolStripMenuItem.Checked);
+                distinctOptionsState);
 
             // Set our text
             this.textBoxOutput.Text = output;
@@ -69,6 +75,76 @@ namespace Sorter
                     textBoxControl.SelectAll();
                 }
             }
+        }
+
+        /// <summary>
+        /// Called whenever one of the Distinct Checkboxes change state.
+        /// </summary>
+        private void UpdateDistinctOptionsState()
+        {
+            // Reset all of the check boxes prior to setting them correctly
+            this.distinctNoneToolStripMenuItem.Checked = false;
+            this.distinctCaseSensitiveToolStripMenuItem.Checked = false;
+            this.distinctCaseInsensitiveToolStripMenuItem.Checked = false;
+
+            switch (distinctOptionsState)
+            {
+                case DistinctOptions.None:
+                    {
+                        this.distinctNoneToolStripMenuItem.Checked = true;
+                        break;
+                    }
+                case DistinctOptions.CaseSensitive:
+                    {
+                        this.distinctCaseSensitiveToolStripMenuItem.Checked = true;
+                        break;
+                    }
+                case DistinctOptions.CaseInsensitive:
+                    {
+                        this.distinctCaseInsensitiveToolStripMenuItem.Checked = true;
+                        break;
+                    }
+                default:
+                    {
+                        string exception = $"The {nameof(DistinctOptions)} enumerable changed but this code was not updated.";
+                        throw new InvalidOperationException(exception);
+                    }
+            }
+
+            OnInputsChanged(this, new EventArgs());
+        }
+
+        /// <summary>
+        /// Invoked when Distinct is set to None
+        /// </summary>
+        /// <param name="sender">The object that invoked this event.</param>
+        /// <param name="e">The arguments to this event.</param>
+        private void distinctNoneToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            distinctOptionsState = DistinctOptions.None;
+            UpdateDistinctOptionsState();
+        }
+
+        /// <summary>
+        /// Invoked when Distinct is set to Case Sensitive
+        /// </summary>
+        /// <param name="sender">The object that invoked this event.</param>
+        /// <param name="e">The arguments to this event.</param>
+        private void distinctCaseSensitiveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            distinctOptionsState = DistinctOptions.CaseSensitive;
+            UpdateDistinctOptionsState();
+        }
+
+        /// <summary>
+        /// Invoked when Distinct is set to Case Insensitive
+        /// </summary>
+        /// <param name="sender">The object that invoked this event.</param>
+        /// <param name="e">The arguments to this event.</param>
+        private void distinctCaseInsensitiveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            distinctOptionsState = DistinctOptions.CaseInsensitive;
+            UpdateDistinctOptionsState();
         }
     }
 }

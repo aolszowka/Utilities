@@ -30,14 +30,17 @@
         {
             this.statusStripMainForm = new System.Windows.Forms.StatusStrip();
             this.menuStripMainForm = new System.Windows.Forms.MenuStrip();
-            this.splitContainerMainForm = new System.Windows.Forms.SplitContainer();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.descendingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.distinctToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.splitContainerMainForm = new System.Windows.Forms.SplitContainer();
             this.textBoxInput = new System.Windows.Forms.RichTextBox();
             this.textBoxOutput = new System.Windows.Forms.RichTextBox();
-            this.distinctToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.distinctNoneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.distinctCaseSensitiveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.distinctCaseInsensitiveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripMainForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerMainForm)).BeginInit();
             this.splitContainerMainForm.Panel1.SuspendLayout();
@@ -64,6 +67,49 @@
             this.menuStripMainForm.TabIndex = 1;
             this.menuStripMainForm.Text = "menuStrip1";
             // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exitToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "&File";
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.exitToolStripMenuItem.Text = "E&xit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // optionsToolStripMenuItem
+            // 
+            this.optionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.descendingToolStripMenuItem,
+            this.distinctToolStripMenuItem});
+            this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.optionsToolStripMenuItem.Text = "&Options";
+            // 
+            // descendingToolStripMenuItem
+            // 
+            this.descendingToolStripMenuItem.CheckOnClick = true;
+            this.descendingToolStripMenuItem.Name = "descendingToolStripMenuItem";
+            this.descendingToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.descendingToolStripMenuItem.Text = "&Descending";
+            this.descendingToolStripMenuItem.CheckedChanged += new System.EventHandler(this.OnInputsChanged);
+            // 
+            // distinctToolStripMenuItem
+            // 
+            this.distinctToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.distinctNoneToolStripMenuItem,
+            this.distinctCaseSensitiveToolStripMenuItem,
+            this.distinctCaseInsensitiveToolStripMenuItem});
+            this.distinctToolStripMenuItem.Name = "distinctToolStripMenuItem";
+            this.distinctToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.distinctToolStripMenuItem.Text = "Distinc&t";
+            // 
             // splitContainerMainForm
             // 
             this.splitContainerMainForm.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -82,44 +128,10 @@
             this.splitContainerMainForm.SplitterDistance = 223;
             this.splitContainerMainForm.TabIndex = 2;
             // 
-            // fileToolStripMenuItem
-            // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.exitToolStripMenuItem});
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem.Text = "&File";
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.exitToolStripMenuItem.Text = "E&xit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
-            // 
-            // optionsToolStripMenuItem
-            // 
-            this.optionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.descendingToolStripMenuItem,
-            this.distinctToolStripMenuItem});
-            this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.optionsToolStripMenuItem.Text = "&Options";
-            // 
-            // descendingToolStripMenuItem
-            // 
-            this.descendingToolStripMenuItem.CheckOnClick = true;
-            this.descendingToolStripMenuItem.Name = "descendingToolStripMenuItem";
-            this.descendingToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.descendingToolStripMenuItem.Text = "&Descending";
-            this.descendingToolStripMenuItem.CheckedChanged += new System.EventHandler(this.OnInputsChanged);
-            // 
             // textBoxInput
             // 
             this.textBoxInput.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxInput.Location = new System.Drawing.Point(0, 0);
-            this.textBoxInput.Multiline = true;
             this.textBoxInput.Name = "textBoxInput";
             this.textBoxInput.Size = new System.Drawing.Size(602, 223);
             this.textBoxInput.TabIndex = 0;
@@ -132,7 +144,6 @@
             // 
             this.textBoxOutput.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxOutput.Location = new System.Drawing.Point(0, 0);
-            this.textBoxOutput.Multiline = true;
             this.textBoxOutput.Name = "textBoxOutput";
             this.textBoxOutput.Size = new System.Drawing.Size(602, 219);
             this.textBoxOutput.TabIndex = 0;
@@ -140,13 +151,29 @@
             this.textBoxOutput.WordWrap = false;
             this.textBoxOutput.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ProcessHotkeys);
             // 
-            // distinctToolStripMenuItem
+            // distinctNoneToolStripMenuItem
             // 
-            this.distinctToolStripMenuItem.CheckOnClick = true;
-            this.distinctToolStripMenuItem.Name = "distinctToolStripMenuItem";
-            this.distinctToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.distinctToolStripMenuItem.Text = "Distinc&t";
-            this.distinctToolStripMenuItem.CheckedChanged += new System.EventHandler(this.OnInputsChanged);
+            this.distinctNoneToolStripMenuItem.CheckOnClick = true;
+            this.distinctNoneToolStripMenuItem.Name = "distinctNoneToolStripMenuItem";
+            this.distinctNoneToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.distinctNoneToolStripMenuItem.Text = "None";
+            this.distinctNoneToolStripMenuItem.Click += new System.EventHandler(this.distinctNoneToolStripMenuItem_Click);
+            // 
+            // distinctCaseSensitiveToolStripMenuItem
+            // 
+            this.distinctCaseSensitiveToolStripMenuItem.CheckOnClick = true;
+            this.distinctCaseSensitiveToolStripMenuItem.Name = "distinctCaseSensitiveToolStripMenuItem";
+            this.distinctCaseSensitiveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.distinctCaseSensitiveToolStripMenuItem.Text = "Case Sensitive";
+            this.distinctCaseSensitiveToolStripMenuItem.Click += new System.EventHandler(this.distinctCaseSensitiveToolStripMenuItem_Click);
+            // 
+            // distinctCaseInsensitiveToolStripMenuItem
+            // 
+            this.distinctCaseInsensitiveToolStripMenuItem.CheckOnClick = true;
+            this.distinctCaseInsensitiveToolStripMenuItem.Name = "distinctCaseInsensitiveToolStripMenuItem";
+            this.distinctCaseInsensitiveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.distinctCaseInsensitiveToolStripMenuItem.Text = "Case Insensitive";
+            this.distinctCaseInsensitiveToolStripMenuItem.Click += new System.EventHandler(this.distinctCaseInsensitiveToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -162,9 +189,7 @@
             this.menuStripMainForm.ResumeLayout(false);
             this.menuStripMainForm.PerformLayout();
             this.splitContainerMainForm.Panel1.ResumeLayout(false);
-            this.splitContainerMainForm.Panel1.PerformLayout();
             this.splitContainerMainForm.Panel2.ResumeLayout(false);
-            this.splitContainerMainForm.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerMainForm)).EndInit();
             this.splitContainerMainForm.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -184,6 +209,9 @@
         private System.Windows.Forms.RichTextBox textBoxInput;
         private System.Windows.Forms.RichTextBox textBoxOutput;
         private System.Windows.Forms.ToolStripMenuItem distinctToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem distinctNoneToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem distinctCaseSensitiveToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem distinctCaseInsensitiveToolStripMenuItem;
     }
 }
 

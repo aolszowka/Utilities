@@ -24,7 +24,7 @@ namespace Sorter
         ///     The "Input String" and "Output String" are just a plain old
         /// string that stores several inputs, delimited by a newline.
         /// </remarks>
-        internal static string SortInput(string inputString, bool sortDescending, bool distinctInputs)
+        internal static string SortInput(string inputString, bool sortDescending, DistinctOptions distinctInputs)
         {
             // TODO: This method needs to be re-factored and abstracted into its own library!
 
@@ -49,16 +49,28 @@ namespace Sorter
         /// </summary>
         /// <param name="inputs">The input to filter.</param>
         /// <param name="sortDescending">Indicates that the result should be returned in descending order.</param>
-        /// <param name="distinctInputs">Indicates that the result should only include the distinct elements.</param>
+        /// <param name="distinctInputs">Indicates the result distinct filtering options.</param>
         /// <returns>An Enumerable that is filtered according to the arguments.</returns>
-        internal static IEnumerable<string> SortInput(IEnumerable<string> inputs, bool sortDescending, bool distinctInputs)
+        internal static IEnumerable<string> SortInput(IEnumerable<string> inputs, bool sortDescending, DistinctOptions distinctInputs)
         {
             IEnumerable<string> outputs = inputs;
 
             // Determine if we should only return distinct
-            if (distinctInputs)
+            if (distinctInputs != DistinctOptions.None)
             {
-                outputs = outputs.Distinct();
+                if (distinctInputs == DistinctOptions.CaseSensitive)
+                {
+                    outputs = outputs.Distinct();
+                }
+                else if (distinctInputs == DistinctOptions.CaseInsensitive)
+                {
+                    outputs = outputs.Distinct(StringComparer.InvariantCultureIgnoreCase);
+                }
+                else
+                {
+                    string exception = $"There was a new enumeration added to {nameof(DistinctOptions)} this code needs to be updated.";
+                    throw new InvalidOperationException(exception);
+                }
             }
 
             // Sort the inputs
