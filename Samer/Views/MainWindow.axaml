@@ -1,0 +1,38 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:Samer.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Samer.Views.MainWindow"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="Samer">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_Options">
+                <CheckBox
+                    BorderThickness="0"
+                    IsChecked="{Binding IsCaseSensitiveCompare}">
+                    Case _Sensitive Comparision
+                </CheckBox>
+                <MenuItem Header="-"/>
+                <ListBox Items="{Binding ComparisonTypeList}"
+                         SelectedItem="{Binding ComparisonType}"
+                         Classes="RadioButtonListBox"/>
+            </MenuItem>
+        </Menu>
+        <Grid ColumnDefinitions="*,2,*" RowDefinitions="*,2,*">
+            <TextBox Grid.Row="0" Grid.Column="0" AcceptsReturn="True" TextWrapping="NoWrap" Text="{Binding InputLeft, Mode=TwoWay}"/>
+            <GridSplitter Grid.Row="0" Grid.Column="1" Background="Black" ResizeDirection="Columns"/>
+            <TextBox Grid.Row="0" Grid.Column="2" AcceptsReturn="True" TextWrapping="NoWrap" Text="{Binding InputRight, Mode=TwoWay}"/>
+            <GridSplitter Grid.Row="1" Grid.ColumnSpan="3" Background="Black" ResizeDirection="Rows"/>
+            <TextBox Grid.Row="2" Grid.ColumnSpan="3" AcceptsReturn="True" TextWrapping="NoWrap" Text="{Binding Output}"/>
+        </Grid>
+    </DockPanel>
+
+</Window>
