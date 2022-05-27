@@ -1,6 +1,7 @@
-Utilities
-=========
+# Utilities
+Repository to store various utility programs I create.
 
-Repository to store various utility programs I create
+These programs are generally small utility programs, not worthy of their own repository or project.
 
-Table Select Icon courtesy of FatCow (http://www.fatcow.com/free-icons Farm [Fresh Icons - Table select column icon])
+## License
+Most of these applications are licensed under the MIT License.
