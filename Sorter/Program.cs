@@ -1,6 +1,6 @@
 ﻿// -----------------------------------------------------------------------
 // <copyright file="Program.cs" company="Ace Olszowka">
-// Copyright (c) Ace Olszowka 2014. All rights reserved.
+// Copyright (c) Ace Olszowka 2014-2022. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -21,6 +21,7 @@ namespace Sorter
         internal static void Main()
         {
             Application.EnableVisualStyles();
+            Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());
         }

@@ -12,7 +12,7 @@ It also allows you to filter them in a Case Sensitive or Insensitive manner.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Ace Olszowka")]
 [assembly: AssemblyProduct("Sorter")]
-[assembly: AssemblyCopyright("Copyright © Ace Olszowka 2014-2019")]
+[assembly: AssemblyCopyright("Copyright © Ace Olszowka 2014-2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -34,5 +34,5 @@ It also allows you to filter them in a Case Sensitive or Insensitive manner.")]
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("0.0.0.5")]
-[assembly: AssemblyFileVersion("0.0.0.5")]
+[assembly: AssemblyVersion("0.0.0.6")]
+[assembly: AssemblyFileVersion("0.0.0.6")]
