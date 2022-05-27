@@ -1,6 +1,6 @@
 ﻿// -----------------------------------------------------------------------
 // <copyright file="AboutBox.cs" company="Ace Olszowka">
-// Copyright (c) Ace Olszowka 2014. All rights reserved.
+// Copyright (c) Ace Olszowka 2014-2022. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------
 
